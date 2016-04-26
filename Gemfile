@@ -29,9 +29,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'font-awesome-sass', '~> 4.5.0'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'bootstrap-sass-extras', '~> 0.0.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
