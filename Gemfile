@@ -28,7 +28,7 @@ gem 'sass', '~> 3.4', '>= 3.4.22'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'font-awesome-sass', '~> 4.5.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
