@@ -147,6 +147,7 @@
                 <div class="well">
                     <h4>Recent Posts</h4>
                     <% @articles.each do |a| %>
+                    Created by: <%= a.user.username  %><br />
                     <strong><%= link_to a.title , a %></strong>
                     <p><%= truncate (a.body) %></p> 
                     <% end %>
@@ -168,13 +169,16 @@
 		<div class="post-preview">
 		    <a href="post.html">
 		        <h2 class="post-title">
-		            Science has not yet mastered prophecy
+		            <% @articles.each do |a| %>
+                     <strong><%= link_to a.title , a %></strong> 
 		        </h2>
 		        <h3 class="post-subtitle">
-		            We predict too much for the next year and yet far too little for the next ten.
+		             <p><%= truncate (a.body) %></p>   
 		        </h3>
 		    </a>
-		    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
+		    <p class="post-meta">Posted by <a href="#"><%= a.user.username  %>
+		    </a> on August 24, 2014</p>
+		    <% end %>
 		</div>
 		<hr>
 		<!-- Blog Comments -->
@@ -200,67 +204,8 @@
 		    </a>
 		    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
 		</div>
-		<hr>
-
-		<!-- Blog Comments -->
-		<!-- Comments Form -->
-		<div class="well">
-		<h4>Leave a Comment:</h4>
-		<form role="form">
-		<div class="form-group">
-		<textarea class="form-control" rows="3"></textarea>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-		</div>
-		<hr>
-		<div class="post-preview">
-		    <a href="post.html">
-		        <h2 class="post-title">
-		            Science has not yet mastered prophecy
-		        </h2>
-		        <h3 class="post-subtitle">
-		            We predict too much for the next year and yet far too little for the next ten.
-		        </h3>
-		    </a>
-		    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-		</div>
-		<hr>
-		<!-- Blog Comments -->
-		<!-- Comments Form -->
-		<div class="well">
-		<h4>Leave a Comment:</h4>
-		<form role="form">
-		<div class="form-group">
-		<textarea class="form-control" rows="3"></textarea>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-		</div>
-		<hr>
-		<div class="post-preview">
-		    <a href="post.html">
-		        <h2 class="post-title">
-		            Failure is not an option
-		        </h2>
-		        <h3 class="post-subtitle">
-		            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-		        </h3>
-		    </a>
-		    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-		</div>
-		<hr>
-		<!-- Blog Comments -->
-		<!-- Comments Form -->
-		<div class="well">
-		<h4>Leave a Comment:</h4>
-		<form role="form">
-		<div class="form-group">
-		<textarea class="form-control" rows="3"></textarea>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-		</div>
+		
+	
 		
 		<hr>
 		<!-- Pager -->
