@@ -147,8 +147,8 @@
                 <div class="well">
                     <h4>Recent Posts</h4>
                     <% @articles.each do |a| %>
-                    Created by: <%= a.user %><br />
-                    <strong><%= link_to a.title, a %></strong>
+                    Created by: <%= a.user.username  %><br />
+                    <strong><%= link_to a.title , a %></strong>
                     <p><%= truncate (a.body) %></p> 
                     <% end %>
 
@@ -176,7 +176,7 @@
 		             <p><%= truncate (a.body) %></p>   
 		        </h3>
 		    </a>
-		    <p class="post-meta">Posted by <a href="#"><%= a.user %>
+		    <p class="post-meta">Posted by <a href="#"><%= a.user.username  %>
 		    </a> on August 24, 2014</p>
 		    <% end %>
 		</div>
