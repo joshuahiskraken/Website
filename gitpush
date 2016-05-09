@@ -1,4 +1,4 @@
 git add -A
-git commit -m --
+git commit -m "added email password recovery"
 git push origin master
 git push heroku master
