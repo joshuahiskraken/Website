@@ -1,4 +1,4 @@
 git add -A
-git commit -m "added comment module"
+git commit -m "quick commit"
 git push origin master
 git push heroku master
