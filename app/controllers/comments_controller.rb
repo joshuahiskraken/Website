@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
 
+	before_action :authenticate_user!
+
 def create
-	@article = article.find(params[:article_id])
+	@article = Article.find(params[:article_id])
 	@comment = @article.comments.create(params[:comment].permit(:body))
 	@comment.user_id = current_user.id if current_user 
 
@@ -9,22 +11,30 @@ def create
 		redirect_to article_path(@article), notice: 'Your comment has Posted'
 	else
 		redirect_to 'new'
-
+	end
 end
 
 def update
-	@article = article.find(params[:article_id])
+	@article = Article.find(params[:article_id])
+	@comment = @article.comment.find(params[:id])
+
+	if @comment.update(params[:comment].permit(:body))
+		redirect_to article_path(@article), notice: 'Your comment has been updated'
+	else
+		render 'edit'
+	end
 end
 
 def edit
-	@article = article.find(params[:article_id])
+	@article = Article.find(params[:article_id])
+	@comment = @article.comments.find(params[:id])
 end
 
 def destroy
-	@article = article.find(params[:article_id])
+	@article = Article.find(params[:article_id])
+	@comment = @article.comments.find(params[:id])
+	@comment.destroy
+		redirect_to article_path(@article), notice: 'Your comment has been deleted'
 end
-
-
-
 
 end
