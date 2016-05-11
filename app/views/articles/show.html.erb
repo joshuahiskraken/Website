@@ -1,25 +1,62 @@
-<p id="notice"><%= notice %></p>
 
+
+
+<div class="row">
+ <!-- Blog Post Content Column -->
+ <div class="col-lg-8">
+ <!-- Blog Post -->
+ <!-- Title -->
+ <h1 style="font-size: 62.5px;">
+ <%= @article.title %>
+ </h1>
+ <!-- Author -->
+ <p class="lead">
+ <%= @article.user.username %>
+ </p>
+ <hr>
+ <!-- Date/Time -->
  
 
-<p>
-  <strong>Created by:</strong>
-  <%= @article.user.username %>
-</p>
+ <hr>
+ <!-- Preview Image -->
+
+ <hr>
+ <!-- Post Content -->
+ <%= @article.body %>
+ 
+ <hr>
+
+ <!-- Blog Comments -->
+<%= render @article.comments %>
+ <!-- Comments Form -->
+
+ <%= render 'comments/form' %>
+ <div class="well">
+ 
+
+
+<h4>blah blah</h4>
+ </div>
+ <hr>
+ <!-- Posted Comments -->
+ <!-- Comment -->
+ </div>
+ <!-- Blog Sidebar Widgets Column -->
+ <div class="col-md-4">
+ <!-- Blog Search Well -->
+
+ <!-- Blog Categories Well -->
+
+ <!-- Side Widget Well -->
+ <div class="well">
+ <h4>Recent Posts</h4>
+
+ </div>
+ </div>
+</div>
 
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-
-  <%= render 'comments/form' %>
-</p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
