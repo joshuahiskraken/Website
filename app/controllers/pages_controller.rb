@@ -2,6 +2,8 @@ class PagesController < ApplicationController
 
 
 def index
+	if current_user
+		redirect_to articles_path
 	@articles = Article.last(5)
 	end
 def contact
